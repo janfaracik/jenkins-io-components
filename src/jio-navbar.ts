@@ -16,6 +16,7 @@ export type NavbarItemLink = {
   link: string | Array<NavbarItemLink>;
   header?: boolean;
   title?: string;
+  icon?: string;
 };
 
 export type Theme = 'dark' | 'light' | 'auto';
@@ -115,21 +116,18 @@ export class Navbar extends LitElement {
             label: msg("Developer Guide"), link: "/doc/developer", header: true
           },
           {label: msg("Contributor Guide"), link: "/participate", header: true},
-          {label: msg("Books"), link: "/books", header: true},
+          {label: msg("Books"), link: "/books", header: true, icon: 'book-outline' },
         ]
       },
       {label: msg("Plugins"), link: "https://plugins.jenkins.io/"},
       {
         label: msg("Community"), link: [
           {
-            label: msg("Overview"), link: "/participate/"
+            label: msg("Chat"), link: "/chat/", title: "Chat with the rest of the Jenkins community on IRC", icon: "chatbubbles-outline"
           },
+          {label: msg("Meet"), link: "/projects/jam/", icon: "people-outline"},
           {
-            label: msg("Chat"), link: "/chat/", title: "Chat with the rest of the Jenkins community on IRC"
-          },
-          {label: msg("Meet"), link: "/projects/jam/"},
-          {
-            label: msg("Events"), link: "/events/"
+            label: msg("Events"), link: "/events/", icon: "map-outline"
           },
           {label: msg("Forum"), link: "https://community.jenkins.io/"},
           {label: msg("Issue Tracker"), link: "https://issues.jenkins.io/"},
@@ -141,23 +139,23 @@ export class Navbar extends LitElement {
           },
           {label: "- " + msg("Advocacy and Outreach"), link: "/sigs/advocacy-and-outreach/"},
           {label: "- " + msg("Documentation"), link: "/sigs/docs/"},
-          {label: "- " + msg("Google Summer of Code"), link: "/sigs/gsoc/"},
+          {label: "- " + msg("Google Summer of Code"), link: "/sigs/gsoc/", icon: "logo-google" },
           {label: "- " + msg("Platform"), link: "/sigs/platform/"},
-          {label: "- " + msg("User Experience"), link: "/sigs/ux/"},
+          {label: "- " + msg("User Experience"), link: "/sigs/ux/", icon: "triangle-outline"},
         ]
       },
       {
         label: msg("Subprojects"), link: [
           {
-            label: msg("Overview"), link: "/projects/"
+            label: msg("Overview"), link: "/projects/", icon: "triangle-outline"
           },
-          {label: msg("Google Summer of Code in Jenkins"), link: "/projects/gsoc/"},
-          {label: msg("Infrastructure"), link: "/projects/infrastructure/"},
-          {label: msg("CI/CD and Jenkins Area Meetups"), link: "/projects/jam/"},
-          {label: msg("Jenkins Configuration as Code"), link: "/projects/jcasc/"},
-          {label: msg("Jenkins Operator"), link: "/projects/jenkins-operator/"},
-          {label: msg("Jenkins Remoting"), link: "/projects/remoting/"},
-          {label: msg("Document Jenkins on Kubernetes"), link: "/sigs/docs/gsod/2020/projects/document-jenkins-on-kubernetes/"},
+          {label: msg("Google Summer of Code in Jenkins"), link: "/projects/gsoc/", icon: "logo-google" },
+          {label: msg("Infrastructure"), link: "/projects/infrastructure/", icon: "triangle-outline"},
+          {label: msg("CI/CD and Jenkins Area Meetups"), link: "/projects/jam/", icon: "triangle-outline"},
+          {label: msg("Jenkins Configuration as Code"), link: "/projects/jcasc/", icon: "triangle-outline"},
+          {label: msg("Jenkins Operator"), link: "/projects/jenkins-operator/", icon: "triangle-outline"},
+          {label: msg("Jenkins Remoting"), link: "/projects/remoting/", icon: "triangle-outline"},
+          {label: msg("Document Jenkins on Kubernetes"), link: "/sigs/docs/gsod/2020/projects/document-jenkins-on-kubernetes/", icon: "triangle-outline"},
         ]
       },
       {
@@ -280,8 +278,8 @@ export class Navbar extends LitElement {
       .property=${this.property}
       ?header=${menuItem.header}
       href=${menuItem.link}
-      title=${ifDefined(menuItem.title)}
-      >${menuItem.header ? html`<strong>${menuItem.label}</strong>` : menuItem.label}</jio-navbar-link>`;
+      title=${ifDefined(menuItem.title)}"
+      ><ion-icon name="${menuItem.icon}" style="font-size: 1.125rem; margin-block: 1px"></ion-icon> ${menuItem.label}</jio-navbar-link>`;
   }
 
   private _clickCollapseButton(e: Event) {

@@ -7,44 +7,44 @@ export class NavbarLink extends LitElement {
 .nav-link {
   color: rgba(255, 255, 255, 0.55);
   display: block;
-  padding: 0.5em 0;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  //padding: 0.5em 0;
+  //padding-left: 0.5rem;
+  //padding-right: 0.5rem;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 .dropdown-item {
-  background-color: transparent;
-  border: 0;
-  clear: both;
-  color: #212529;
-  display: block;
-  font-weight: 400;
-  padding: 0.25em 1rem;
-  text-align: inherit;
-  text-decoration: none;
-  white-space: nowrap;
+    color: rgba(0, 0, 0);
+    text-decoration: none;
+    transition: 0.2s ease;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.7rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    //min-height: 34px;
+    min-height: 0;
+    border-radius: 0.66rem;
+    box-sizing: border-box;
+    line-height: 1.6;
 }
 
 .dropdown-item:focus,
 .dropdown-item:hover {
-  background-color: #cbd3da;
-  color: #16181b;
-  text-decoration: none;
+    background-color: rgba(0, 0, 50, 0.05);
 }
 
-.active {
-	color: #fff;
-	text-decoration: none;
-	background-color: #0070EB;
-}
+//.active {
+//	color: #fff;
+//	text-decoration: none;
+//	background-color: #0070EB;
+//}
 
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
+  background-color: rgba(0, 0, 50, 0.1);
 }
 
   `;
