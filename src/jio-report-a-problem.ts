@@ -11,7 +11,14 @@ export class ReportAProblem extends LitElement {
   static override styles = [
     ionIconText,
     css`
-      ion-icon { color: #FFA91B; }
+      ion-icon { color: var(--orange); }
+
+      a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+      }
     `
   ];
 
