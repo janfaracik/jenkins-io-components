@@ -3,10 +3,6 @@ jio-report-a-problem {
   --link-color: var(--color);
 }
 
-jio-improve-this-page {
-  margin-right: 10px;
-}
-
 footer {
   --gap: 2rem;
 
