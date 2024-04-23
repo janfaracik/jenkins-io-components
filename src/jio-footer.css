@@ -1,6 +1,6 @@
 jio-improve-this-page,
 jio-report-a-problem {
-  --link-color: #fff;
+  --link-color: var(--color);
 }
 
 jio-improve-this-page {
@@ -17,9 +17,8 @@ p {
 }
 
 footer {
-  background: #1077ad;
   clear: both;
-  color: #fff;
+  color: var(--color);
   display: block;
   float: left;
   line-height: 1.66;
@@ -38,14 +37,14 @@ footer {
 
 a {
   background-color: transparent;
-  color: #fff;
+  color: var(--color);
   text-decoration: none;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
 }
 
 a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 .area {
@@ -56,7 +55,7 @@ a:hover {
 }
 
 .col1 {
-  padding-left: 0; 
+  padding-left: 0;
 }
 
 li,
@@ -76,20 +75,13 @@ ul {
 }
 
 .links h5 {
-  color: #fff;
+  color: var(--color);
   font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0.5rem;
   margin-top: 0;
   text-align: left;
-}
-
-.div-mar {
-  border-top: solid 2px #fff;
-  margin-right: 2rem;
-  padding: 1rem 0;
 }
 
 .box {
